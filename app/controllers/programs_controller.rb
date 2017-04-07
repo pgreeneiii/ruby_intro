@@ -1,8 +1,17 @@
 class ProgramsController < ApplicationController
   def home
     # Your code goes below.
+    my_birthday = Time.parse("May 12th, 1990")
+    today = Time.now
+    seconds_since_i_was_born = today - my_birthday
 
-    @your_output = "Replace this string with your output"
+    @your_output = seconds_since_i_was_born
+
+    first = "Phil"
+    last = "Greene"
+
+    @first_then_last = first + " " + last
+    @last_then_first = last + ", ", first
 
     render("programs/home.html.erb")
   end
